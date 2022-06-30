@@ -1,0 +1,20 @@
+<head>
+    <style> 
+    body{ background-color:grey ;}
+    textarea{  text-align: center}
+    </style>
+</head>
+
+<textarea name="link" spellcheck="false" form="uhwhyareulooking">Enter link.</textarea>
+
+<form action="/" method="post" id="uhwhyareulooking">
+    <input type="submit" value="save">
+</form>
+
+<%if (req.query.code == "1" && req.query.id != undefined) { %>
+    <h4><%=req.protocol + '://' + req.get('host') + '/link/' + req.query.id.toString()%></h4>
+    <% } %>
+    
+<%if (req.query.code == "2") { %>
+    <h4>Protocol missing!</h4>
+    <% } %>
